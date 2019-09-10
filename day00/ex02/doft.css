@@ -1,0 +1,175 @@
+body{
+	background-color: gray;
+	position: relative;
+	min-width: 1400px;
+	min-height: 910px;
+}
+.top {
+	background-color: rgb(144, 144, 144);
+	box-shadow: 10px 10px 10px black;
+	border-radius: 15px;
+	width: 200px 200px 200px 200px;
+	padding: 10px;
+	margin: 10px 10px 10px auto;
+  }
+.left{
+	background-color: rgb(144, 144, 144);
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px black;
+	width: 1000px 100px 1000px auto;
+	padding: 15px;
+	margin: 10px 90% 150px 50px;
+}
+.middle{
+	background-color: rgb(144, 144, 144);
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px black;
+	width: 1000px;
+	padding: 10px;
+	margin: 10px 15% 1% 12%;
+}
+.right{
+	background-color: rgb(144, 144, 144);
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px black;
+	width: 1000px 100px 1000px auto;
+	padding: 15px;
+	margin: 10px 50px 150px 90%;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 25px;
+}
+.day42{
+	width: 750px;
+}
+.loupe{
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	width: 330px;
+}
+.reload{
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	width: 20px;
+}
+.disconnect{
+	position: absolute;
+	top: 190px;
+	right: 25px;
+	width: 20px;
+}
+.advance{
+	top: 360px;
+	right: 1400px;
+	width: 75px;
+}
+.take{
+	top: 470px;
+	right: 1400px;
+	width: 75px;
+}
+.look{
+	top: 570px;
+	right: 1400px;
+	width: 75px;
+	border-style: solid;
+	border-radius: 6px;
+	border-color: red;
+	border-width: 5px;
+}
+.use{
+	top: 670px;
+	right: 1400px;
+	width: 75px;
+}
+.speak{
+	top: 770px;
+	right: 1400px;
+	width: 75px;
+}
+.cluster{
+	top: 10px;
+	right: 10px;
+	width: 1000px;
+}
+.read{
+	width: 90px;
+}
+.towel{
+	width: 80px;
+}
+.wall{
+	height: 75px;
+	width: 100px;
+	background-image: url(resources/brick.jpg);
+    background-repeat: repeat;
+}
+.form {
+	width: 520px;
+	height: 170px;
+	border: 0px;
+	border-style: solid;
+	color: black;
+	background-color: #7afa77;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px black;
+	display: block;
+	margin-left: 25px;
+	margin-top: -100px;
+	z-index: 10;
+	position: absolute;
+	font-family: sans-serif;
+	letter-spacing: 0.65px;
+	font-size: 17px;
+	text-align: left;
+  
+  }
+  .form p {
+	display: inline;
+  }
+  .form h2 {
+	display: inline;
+	font-family: Georgia, serif;
+	font-size: 32px;
+	font-weight: lighter;
+  }
+  
+  .form h3 {
+	font-family: sans-serif;
+	letter-spacing: 0.65px;
+	font-size: 17px;
+	text-align: left;
+	text-shadow: 5px 5px 5px red;
+	display: inline;
+	font-weight: normal;
+  }
+  
+  .form input[type = text] {
+	width: 380px;
+	height: 14px;
+	margin-left: 13px;
+	margin-top: 3px;
+	border: 2px solid;
+	border-bottom-color: #eeeeee;
+	border-right-color: #eeeeee;
+	border-left-color: #9d969d;
+	border-top-color: #9d969d;
+  }
+  
+  .form input[type = submit] {
+	width: 80px;
+	height: 20px;
+	margin-left: 4px;
+	margin-bottom: 0;
+	border-radius: 1px;
+	text-align: center;
+	font-size: 13px;
+	letter-spacing: 0.25px;
+	background: linear-gradient(#f0f0f0, #dcdcdc);
+	border: solid #9d969d 1px;
+  }

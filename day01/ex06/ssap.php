@@ -12,7 +12,8 @@ if ($argc > 1)
 		$dest = $dest. " " .$str;
 		$i++;
 	}
-	$dest = str_word_count($dest, 1);
+	$dest = trim($dest);
+	$dest = preg_split("/[\s,]+/", $dest);
 	sort($dest);
 	$str = implode("\n", $dest);
 	echo "" . $str . "\n";

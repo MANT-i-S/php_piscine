@@ -1,7 +1,8 @@
 body{
 	background-color: gray;
 	position: relative;
-	min-width: 1400px;
+	min-width: 1425px;
+	max-width: 1425px;
 	min-height: 910px;
 }
 .top {

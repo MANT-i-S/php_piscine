@@ -15,7 +15,7 @@ if ($argc > 1)
 	$dest = trim($dest);
 	$dest = preg_split("/[\s,]+/", $dest);
 	sort($dest);
-	$str = implode("\n", $dest);
+	$str = implode(" ", $dest);
 	echo "" . $str . "\n";
 }
 ?>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Piscine PHP : Rush00">
+		<meta name="keywords" content="42SiliconValley, Piscine, PHP, HTML, CSS, JS, Rush00">
+		<meta name="author" content="Serhii Holiak(@sholiak), Aidan Lim(@dlim)">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Rush</title>
+        <link rel="icon" href="/resource/fav.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/resource/app.css">
+        <script src="/resource/app.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-title" onclick="nav(1, 0)">Rush</div>
+            <div class="dd-ctn">
+                <button class="dd-btn" onclick="nav(1, 0)">Men's</button>
+                <div class="dd-con">
+                    <div href="#" onclick="nav(1, 1)">Tops</div>
+                    <div href="#" onclick="nav(1, 2)">Pants</div>
+                    <div href="#" onclick="nav(1, 3)">Shoes</div>
+                </div>
+            </div>
+            <div class="dd-ctn">
+                <button class="dd-btn" onclick="nav(2, 0)">Women's</button>
+                <div class="dd-con">
+                    <div href="#" onclick="nav(2, 1)">Tops</div>
+                    <div href="#" onclick="nav(2, 2)">Pants</div>
+                    <div href="#" onclick="nav(2, 3)">Shoes</div>
+                </div>
+            </div>
+            <div class="dd-ctn">
+                <button class="dd-btn" onclick="nav(3, 0)">Kid's</button>
+                <div class="dd-con">
+                    <div href="#" onclick="nav(3, 0)">Clothes</div>
+                </div>
+            </div>
+            <button id="btn-signin" class="header-btn header-btn-first" onclick="nav(4, 0)">Sign In</button>
+            <button id="btn-signup" class="header-btn" onclick="nav(5, 0)">Sign Up</button>
+            <button id="btn-logout" class="header-btn header-btn-first" onclick="logout()">Logout</button>
+            <button id="btn-deleteAccount" class="header-btn" onclick="deleteAccount()">Delete</button>
+            <button id="btn-manager" class="header-btn" onclick="nav(6, 0)">Manage</button>
+        </header>
+        <section class="content">
+            <div id="nav-men" class="content-container">
+                <div class="content-img content-img-men"></div>
+            </div>
+            <div id="nav-women" class="content-container">
+                <div class="content-img content-img-women"></div>
+            </div>
+            <div id="nav-kid" class="content-container">
+                <div class="content-img content-img-kid"></div>
+            </div>
+            <div id="content-item-container" class="content-item-container"></div>
+            <div id="nav-signin" class="user-container">
+                <p class="user-title">Welcome back!</p>
+                <p class="user-text">Full he none no side. Uncommonly surrounded considered for him are its. It we is read good soon. My to considered delightful invitation announcing of no decisively boisterous. Did add dashwoods deficient man concluded additions resources. Or landlord packages overcame distance smallest in recurred. Wrong maids or be asked no on enjoy. Household few sometimes out attending described. Lain just fact four of am meet high. </p>
+                <input type="text" id="signin-userId" class="user-input" name="userId" placeholder="ID">
+                <input type="password" id="signin-userPassword" class="user-input" name="userPassword" placeholder="Password">
+                <button class="user-btn" onclick="signin()">Sign In</button>
+                <p class="user-other">Don't you have an account yet? Click <a onclick="nav(5)" style="text-decoration: underline; cursor: pointer">here!</a></p>
+            </div>
+            <div id="nav-signup" class="user-container">
+                <p class="user-title">Register!</p>
+                <p class="user-text">For though result and talent add are parish valley. Songs in oh other avoid it hours woman style. In myself family as if be agreed. Gay collected son him knowledge delivered put. Added would end ask sight and asked saw dried house. Property expenses yourself occasion endeavor two may judgment she. Me of soon rank be most head time tore. Colonel or passage to ability. </p>
+                <input type="text" id="signup-userId" class="user-input" name="userId" placeholder="ID">
+                <input type="password" id="signup-userPassword" class="user-input" name="userPassword" placeholder="Password">
+                <button class="user-btn" onclick="signup()">Sign Up</button>
+                <p class="user-other">Do you have an account already? Click <a onclick="nav(4)" style="text-decoration: underline; cursor: pointer">here!</a></p>
+            </div>
+            <div id="nav-manager" class="content-container">
+                <p class="manager-title">Items Information</p>
+                <button class="manager-item-add" onclick="itemAdd()">ADD</button>
+                <div id="manager-item-list-container"></div>
+                <p class="manager-title">Sales Information</p>
+                <div id="manager-sale-list-container"></div>
+            </div>
+            <div id="nav-cart" class="content-container">
+                <p class="cart-title">Your Cart</p>
+                <p class="cart-text">Bringing unlocked me an striking ye perceive. Mr by wound hours oh happy. Me in resolution pianoforte continuing we. Most my no spot felt by no. He he in forfeited furniture sweetness he arranging. Me tedious so to behaved written account ferrars moments. Too objection for elsewhere her preferred allowance her. Marianne shutters mr steepest to me. Up mr ignorant produced distance although is sociable blessing. Ham whom call all lain like. 
+                    Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne new manners savings staying had. Under folly balls death own point now men. Match way these she avoid see death. She whose drift their fat off. 
+                    Marianne or husbands if at stronger ye. Considered is as middletons uncommonly. Promotion perfectly ye consisted so. His chatty dining for effect ladies active. Equally journey wishing not several behaved chapter she two sir. Deficient procuring favourite extensive you two. Yet diminution she impossible understood age.
+                </p>
+                <div id="cart-item-list-container"></div>
+            </div>
+            <div id="cart-icon" class="cart-icon" onclick="nav(7, 0)"></div>
+        </section>
+    </body>
+</html>

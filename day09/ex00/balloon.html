@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: middle;
+    color:rgb(94, 255, 30)
+}
+</style>
+</head>
+
+<body>
+<div class = "center">
+        <canvas id="canvas" width="200" height="200"></canvas>
+</div>
+<script>
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var raf;
+
+var ball = {
+  x: 100,
+  y: 100,
+  radius: 100,
+  i: 0,
+  colorArray: ['red', 'rgb(94, 255, 30)', 'blue'],
+  draw: function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.fillStyle = this.colorArray[this.i];
+    ctx.fill();
+  }
+};
+
+function draw() {
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+  ball.draw();
+  raf = window.requestAnimationFrame(draw);
+}
+function draw_out() {
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+  ball.draw();
+  raf = window.requestAnimationFrame(draw);
+}
+
+canvas.addEventListener('click', function(e) {
+    if(ball.radius >= 210)
+    {
+        ball.radius = 100;
+        canvas.width = 200;
+        canvas.height = 200;
+        ball.x = 100;
+        ball.y = 100;
+    }
+    else
+    {
+        ball.radius += 5;
+        canvas.width += 10;
+        canvas.height += 10;
+        ball.x += 5;
+        ball.y += 5;
+    }
+    if(ball.i < 2){
+        ball.i++;
+    }
+    else
+        ball.i = 0;
+    raf = window.requestAnimationFrame(draw);
+});
+
+canvas.addEventListener('mouseout', function(e) {
+    if(ball.radius > 100)
+        ball.radius -= 2.5;
+    if(ball.i > 0){
+        ball.i--;
+    }
+    else
+        ball.i = 2;
+    raf = window.requestAnimationFrame(draw_out);
+});
+
+ball.draw();
+</script>
+</body>
+</html> 

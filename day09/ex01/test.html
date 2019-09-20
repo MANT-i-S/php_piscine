@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+		</style>
+		<script defer>
+setInterval(function(){ alert("Please, use me..."); }, 30000);
+		function res() {
+			var num1, num2, op, res;
+			var interval = "";
+			num1 = document.getElementById("n1").value;
+			num1 = parseInt(num1);
+			num2 = document.getElementById("n2").value;
+			num2 = parseInt(num2);
+			op = document.getElementById("operator").value;
+			if (num1 >= 0 && num2 >= 0)
+			{   if (op === '+')
+				{
+					res = num1 + num2
+					console.log(res);
+					document.getElementById("out").innerHTML = res;
+				}
+				if (op === '-')
+				{
+					res = num1 - num2
+					console.log(res);
+					document.getElementById("out").innerHTML = res;
+				}
+				if (op === '*')
+				{
+					res = num1 * num2
+					console.log(res);
+					document.getElementById("out").innerHTML = res;
+				}
+				if (op === '/')
+				{
+					if (num1 === 0 || num2 === 0)
+					{
+						console.log('It’s over 9000!');
+						document.getElementById("out").innerHTML = 'It’s over 9000!';
+					}
+					else
+					{
+						res = num1 / num2
+						console.log(res);
+						document.getElementById("out").innerHTML = res;
+					}
+				}
+				if (op === '%')
+				{
+					if (num1 === 0 || num2 === 0)
+					{
+						console.log('It’s over 9000!');
+						document.getElementById("out").innerHTML = 'It’s over 9000!';
+					}
+					else{
+						res = num1 % num2
+						console.log(res);
+						document.getElementById("out").innerHTML = res;
+					}
+				}
+			}
+			else
+			{
+				console.log('Error :\(');
+				document.getElementById("out").innerHTML = 'Error :\(';    
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<p>Cal</p>
+		<a>Put num 1 <input type="text" id="n1"></a>
+		<select id="operator">
+			<option  value="+">+</option>
+			<option  value="-">-</option>
+			<option  value="*">*</option>
+			<option  value="/">/</option>
+			<option  value="%">%</option>
+		</select>
+		<a>num 2 <input type="text" id="n2"></a>
+		<button onclick="res()">Try me</button>
+		<hr>
+		<p id="out"></p>
+	</body>
+</html>

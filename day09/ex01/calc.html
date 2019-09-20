@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+        <title>Calculator</title>
+        <style>
+         body{
+            background-color: grey;
+         }
+         img{
+            position: absolute;
+            border-radius: 10px;
+            top: 260px;
+            left: 766px;
+            width: 60px;
+            height: 70px;
+         }
+         .middle{
+	      background-color: rgb(42, 42 ,42);
+         border-radius: 10px;
+	      box-shadow: 10px 10px 10px black;
+         width: 190px;
+         height: 100px;
+	      padding: 10px;
+         margin: 250px auto auto auto;
+         }
+         .buttons{
+            border-radius: 5px;
+         }
+        </style>
+    </head>
+
+    <body>
+        <div class = "middle">
+            <img src = "https://media.istockphoto.com/vectors/praying-mantis-vector-id656678132?k=6&m=656678132&s=612x612&w=0&h=wcgUwexkKRJxF3B2L3QisMqPbpKdtpyNH_e_IYYsevo=" alt = "Mantis" onclick="dont_touch()"></td>
+          <form name="calculator" style = "width: 200px; height: 200px;">
+            <input style = "width:122px"class = "buttons" type="text" name="answer" placeholder="I can count! ;P"/>
+            <br>
+            
+            <input class = "buttons" type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
+            <input class = "buttons" type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
+            <input class = "buttons" type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
+            <input class = "buttons" type="button" value=" + " onclick="calculator.answer.value += '+'" />
+            <br/>
+            
+            <input class = "buttons" type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
+            <input class = "buttons" type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
+            <input class = "buttons" type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
+            <input class = "buttons" type="button" value=" - " onclick="calculator.answer.value += '-'" />
+            </br>
+          
+            <input class = "buttons" type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
+            <input class = "buttons" type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
+            <input class = "buttons" type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
+            <input class = "buttons" type="button" value=" x " onclick="calculator.answer.value += '*'" />
+            </br>
+        
+            <input class = "buttons" type="button" value=" c " onclick="calculator.answer.value = ''" />
+            <input class = "buttons" type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
+            <input class = "buttons" type="button" value=" / " onclick="calculator.answer.value += '/'" />
+            <input class = "buttons" type="button" value=" % " onclick="calculator.answer.value += '%'" />
+            <input class = "buttons" type="button" value=" Try me! " onclick="Result()"/>
+            </br>
+          </form>
+        </div>
+        <script>
+            window.onload = function() {
+			      setInterval("alert('Please, use me...')", 30000);
+            };
+            function dont_touch()
+            {
+               alert("I'm the one who gives you right answers!\nDon't touch me!");
+            }
+            function char_count(str, letter)
+               {
+            var letter_Count = 0;
+                  for (var position = 0; position < str.length; position++) 
+               {
+               if (str.charAt(position) == letter) 
+               {
+               letter_Count += 1;
+               }
+            }
+            return letter_Count;
+            }
+            function Result() {
+            var str = calculator.answer.value;
+            if(char_count(str, "-") > 1)
+               alert("Error :(");
+            else if(char_count(str, "-") == 1)
+            {
+               if(char_count(str, "*") > 0 || char_count(str, "+") > 0 || char_count(str, "/") > 0 || char_count(str, "%") > 0){
+                  alert("Error :(");
+                  calculator.answer.value = "Error :(";
+               }
+               else if(!isFinite(eval(calculator.answer.value)))
+                  alert("It's over 9000!");
+               else if(eval(calculator.answer.value) === 0)
+                  alert(eval(calculator.answer.value));
+               else if(eval(calculator.answer.value)){
+                  alert(eval(calculator.answer.value));
+                  calculator.answer.value = eval(calculator.answer.value);
+               }
+               else{
+               alert("Error :(");
+               calculator.answer.value = "Error :(";
+               }
+            }
+            else if(!isFinite(eval(calculator.answer.value)))
+               alert("It's over 9000!");
+            else if(eval(calculator.answer.value) === 0)
+               alert(eval(calculator.answer.value));
+            else if(eval(calculator.answer.value)){
+               alert(eval(calculator.answer.value));
+               calculator.answer.value = eval(calculator.answer.value);
+            }
+            else{
+               alert("Error :(");
+               calculator.answer.value = "Error :(";
+            }
+            }
+         </script>
+    </body>
+</html>

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Balloon</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body{
+    background-color: black;
+}
 .center {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 400px;
     text-align: center;
     vertical-align: middle;
-    color:rgb(94, 255, 30)
 }
 </style>
 </head>
@@ -37,18 +41,18 @@ var ball = {
   }
 };
 
-function draw() {
+function draw(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   ball.draw();
   raf = window.requestAnimationFrame(draw);
 }
-function draw_out() {
+function draw_out(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   ball.draw();
   raf = window.requestAnimationFrame(draw);
 }
 
-canvas.addEventListener('click', function(e) {
+canvas.addEventListener('click', function(e){
     if(ball.radius >= 210)
     {
         ball.radius = 100;
@@ -75,7 +79,13 @@ canvas.addEventListener('click', function(e) {
 
 canvas.addEventListener('mouseout', function(e) {
     if(ball.radius > 100)
+    {
         ball.radius -= 2.5;
+        canvas.width -= 5;
+        canvas.height -= 5;
+        ball.x -= 2.5;
+        ball.y -= 2.5;
+    }
     if(ball.i > 0){
         ball.i--;
     }
